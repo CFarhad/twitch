@@ -1,0 +1,41 @@
+const Colors =  {
+  default: "#efeff1",
+  bg: "#0e0e10",
+  primary: {
+    "purple": "#9147ff",
+    "purple-1": "#040109",
+    "purple-2": "#0d031c",
+    "purple-3": "#15052e",
+    "purple-4": "#24094e",
+    "purple-5": "#330c6e",
+    "purple-6": "#451093",
+    "purple-7": "#5c16c5",
+    "purple-8": "#772ce8",
+    "purple-9": "#9147ff",
+    "purple-10": "#a970ff",
+    "purple-11": "#bf94ff",
+    "purple-12": "#d1b3ff",
+    "purple-13": "#e3d1ff",
+    "purple-14": "#f0e5ff",
+    "purple-15": "#fcfaff",
+  },
+  grey:{
+    "grey-1": "#0e0e10",
+    "grey-2": "#18181b",
+    "grey-3": "#1f1f23",
+    "grey-4": "#26262c",
+    "grey-5": "#323239",
+    "grey-6": "#3b3b44",
+    "grey-7": "#53535f",
+    "grey-8": "#848494",
+    "grey-9": "#adadb8",
+    "grey-10": "#c8c8d0",
+    "grey-11": "#d3d3d9",
+    "grey-12": "#dedee3",
+    "grey-13": "#e6e6ea",
+    "grey-14": "#efeff1",
+    "grey-15": "#f7f7f8",
+  }
+}
+
+export default Colors

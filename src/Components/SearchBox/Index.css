@@ -1,0 +1,47 @@
+.searchBox{
+  width: 100%;
+}
+
+.searchInput{
+  background: hsla(0, 0%, 100%, 0.2) !important;
+  border-width: 2px !important;
+  border-color: transparent !important;
+  background-clip: padding-box;
+  appearance: none;
+  width: 350px !important;
+  color: #dbdbdb !important;
+  outline: none !important;
+  z-index: 4 !important;
+}
+
+.searchInput::placeholder{
+  color: #dbdbdb !important;
+}
+
+.searchBtn{
+  background: #323239 !important;
+  border-radius: 0 5px 5px 0 !important;
+  cursor: pointer !important;
+  z-index: 99 !important;
+}
+
+.remoteBtn{
+  background: transparent !important;
+  color: #efeff1 !important;
+  padding: 7px !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: 20px !important;
+  /* width: 0px !important; */
+}
+
+.searchBtn:disabled{
+  background: #000 !important;
+}
+
+.recently__search{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
