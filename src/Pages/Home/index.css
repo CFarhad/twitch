@@ -1,0 +1,6 @@
+.homePage{
+  height: 1000px;
+  width: calc(100% - 10%);
+  float: right;
+  margin-top: 61px;
+}

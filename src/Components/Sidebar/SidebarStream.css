@@ -1,0 +1,25 @@
+.sidebar__stream{
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 1px 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.sidebar__stream:hover{
+  background: #26262c;
+}
+
+.sidebar__stream img{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.sidebar__stream_profile{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  width: 80%;
+}
