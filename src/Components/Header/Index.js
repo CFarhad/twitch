@@ -8,7 +8,7 @@ import {
   IconButton,
   Button,
 } from '@chakra-ui/react';
-import { Switch , Transition  } from '@headlessui/react';
+import { Switch } from '@headlessui/react';
 import { BiDotsVerticalRounded, BiDiamond, BiCheck ,BiUserPlus , BiLogOut , BiMoon , BiWallet , BiChevronRight} from 'react-icons/bi';
 import { FiInbox , FiSliders} from 'react-icons/fi';
 import { BsChatSquare , BsStar } from 'react-icons/bs';

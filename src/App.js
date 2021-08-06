@@ -5,6 +5,7 @@ import Theme from './Theme/Index'
 import Header from './Components/Header/Index'
 import Home from './Pages/Home'
 import Sidebar from './Components/Sidebar/Index'
+
 function App() {
     return (
         <ChakraProvider theme={Theme}>

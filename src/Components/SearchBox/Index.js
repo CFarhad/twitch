@@ -1,5 +1,5 @@
 import React , {useState} from 'react';
-import {InputGroup,Input,InputRightElement,IconButton,Menu,MenuButton,MenuList,MenuItem} from '@chakra-ui/react';
+import {InputGroup,Input,InputRightElement,IconButton,Menu,MenuList,MenuItem} from '@chakra-ui/react';
 import {BsSearch,BsX} from 'react-icons/bs'
 import {FaHistory} from 'react-icons/fa'
 import Colors from '../../Theme/Colors';

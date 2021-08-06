@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
-import {BsArrowBarLeft} from 'react-icons/bs'
-import { useSpring, animated, to } from 'react-spring'
+import {BsArrowBarLeft , BsArrowBarRight} from 'react-icons/bs'
 import SidebarStream from './SidebarStream'
+import {connect} from 'react-redux'
+import {ToggleSidebar} from '../../Actions'
 import './Index.css'
 
 let defaultStreamer = [
   {
     id: 1,
     name: "SabaViva",
-    profile: "https://static-cdn.jtvnw.net/jtv_user_pictures/90c54a6e-c345-485d-80d9-70fd212082f5-profile_image-70x70.png",
+    profile: "https://static-cdn.jtvnw.net/jtv_user_pictures/3e77df75-f0ee-4942-a0dd-c5b64280f40d-profile_image-70x70.png",
     category: "Just Chatting",
     status :{
       view: 77
@@ -126,16 +127,14 @@ let defaultRecommendedChannel = [
   },
 ]
 
-function Index() {
+function Index(props) {
+  console.log(props)
+  let {responsive , toggleSide} = props
   let filterStreamer = (list)=>{
     let online = list.filter(item=> item.status)
     return [...online,...list.filter(x => !online.includes(x))]
   }
-  const showAnimation = useSpring({
-    from: {opacity: 0,display:"none"},
-    to: {opacity: 1,display:"block"},
-    delay: 400
-  })
+
 
   const allFollowedStream = defaultStreamer
   const allRecommendedStream = defaultRecommendedChannel
@@ -166,27 +165,69 @@ function Index() {
     setShowRecommended(!showRecommended)
   }
 
+  let sideBarToggle = (mode)=>{
+    if(mode === "COLLAPSE"){
+      return toggleSide(mode)
+    }
+    toggleSide(mode)
+  }
+
   return (
-    <div className="sidebar">
+    <div className="sidebar" style={{width:`${responsive}%`,alignItems:"center",overflowX: responsive === 16 ? null : "hidden"}}>
       <div className="sidebar__header">
-        <span className="text-sm font-medium">FOLLOWED CHANNELS</span>
-        <BsArrowBarLeft size={25} />
+        {responsive === 16 ? <span className="text-sm font-medium">FOLLOWED CHANNELS</span> : null}
+        <button onClick={()=>responsive === 16 ? sideBarToggle("COLLAPSE") : sideBarToggle("EXPAND")} style={{margin: responsive === 16 ? null : "10px 0 10px 5px"}} >
+          {responsive === 16 ? <BsArrowBarLeft size={25} className="toggleSidebar" /> : <BsArrowBarRight size={25} className="toggleSidebar" />}
+        </button>
       </div>
-      {streamers.map(stream=> <animated.div key={stream.id} style={showAnimation}><SidebarStream  {...stream} /></animated.div> )}
-      {allFollowedStream.length > 5 
-      ? !showFollowed ? <button className="showBtn" onClick={showFollowedMore}>Show More</button> : <button className="showBtn" onClick={showFollowedLess}>Show Less</button> 
-      : console.log("shot")
+      {streamers.map(stream=> <SidebarStream key={stream.id} {...stream} /> )}
+      {responsive === 16
+        ? (
+          <div>
+            {allFollowedStream.length > 5 
+              ? !showFollowed ? <button className="showBtn" onClick={showFollowedMore}>Show More</button> : <button className="showBtn" onClick={showFollowedLess}>Show Less</button> 
+              : null
+            }
+          </div>
+        )
+        : null
       }
-      <div className="sidebar__header">
+
+      {responsive === 16 
+      ? (
+        <div className="sidebar__header">
         <span className="text-sm font-medium">RECOMMENDED CHANNELS</span>
       </div>
-      {recommendedChannel.map(stream=><animated.div key={stream.id} style={showAnimation}><SidebarStream  {...stream} /></animated.div>)}
-      {allRecommendedStream.length > 5 
-      ? !showRecommended ? <button className="showBtn" onClick={showRecommendedMore}>Show More</button> : <button className="showBtn" onClick={showRecommendedLess}>Show Less</button> 
-      : console.log("shot")
+      )
+      : null
       }
+      {recommendedChannel.map(stream=>  <SidebarStream key={stream.id} {...stream} />)}
+      {responsive === 16 
+        ? (
+          <div>
+            {allRecommendedStream.length > 5 
+            ? !showRecommended ? <button className="showBtn" onClick={showRecommendedMore}>Show More</button> : <button className="showBtn" onClick={showRecommendedLess}>Show Less</button> 
+            : null
+            }
+          </div>
+        )
+        : null
+      }
+
     </div>
   )
 }
 
-export default Index
+const mapStateToProps = state=>{
+  return {
+    responsive: state.Responsive
+  }
+}
+
+const mapDispatchToProps = dispatch=>{
+  return {
+    toggleSide: (mode,value)=> dispatch(ToggleSidebar(mode,value))
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Index)
