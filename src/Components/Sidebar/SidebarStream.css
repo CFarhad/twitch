@@ -5,6 +5,7 @@
   padding: 1px 10px;
   width: 100%;
   cursor: pointer;
+  transition-delay: 0.5s;
 }
 
 .sidebar__stream:hover{

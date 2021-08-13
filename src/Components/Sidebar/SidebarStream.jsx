@@ -25,7 +25,7 @@ function SidebarStream(props) {
             }
             </div>
             {category 
-            ? <span style={{color: "#adadb8",fontSize:"13px",width:"68%"}} className="truncate">{category}</span>
+            ? <span style={{color: "#adadb8",fontSize:"13px",width:"68%"}} className="truncate" title={category}>{category}</span>
             : videos ? <span style={{color: "#adadb8",fontSize:"13px"}}>{videos} new videos</span> : ""
             }
           </div>

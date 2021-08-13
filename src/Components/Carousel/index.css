@@ -1,0 +1,121 @@
+.carousel{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px  20px;
+  z-index: 2;
+  position: relative;
+  margin-top: 20px;
+}
+
+.carousel__btn{
+  padding: 4px;
+  color: white;
+  font-size: 30px;
+  border-radius: 3px;
+}
+
+.carousel__btn:hover{
+  background: #323239;
+}
+
+.slide.main{
+  z-index: 20;
+}
+
+.slide.main .slider__video::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.slide.main:hover .slider__video::before{
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.slide.first{
+  position: absolute;
+  z-index: -1;
+  top: 30px;
+  right: 16%;
+}
+
+.slide.third .slider__video , .slide.fourth .slider__video{
+  width: 100%;
+}
+
+.slide.third .slider__video::before , .slide.fourth .slider__video::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.slide.first .video_controller ,.slide.slide.first .live_status{
+  display: none;
+}
+.slide.second .video_controller ,.slide.slide.second .live_status{
+  display: none;
+}
+
+.slide.first .slider , .slide.second .slider{
+  height: 280px !important;
+}
+
+.slide.first .slider__description , .slide.second .slider__description{
+  display: none;
+  width: 0;
+}
+
+.slide.first .slider__video , .slide.second .slider__video{
+  width: 100%;
+}
+
+.slide.first .slider__video::before , .slide.second .slider__video::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.slide.second{
+  position: absolute;
+  left: 16%;
+  top: 30px;
+  z-index: -1;
+}
+
+.slide.third{
+  position: absolute;
+  left: 10%;
+  top: 45px;
+  z-index: -2;
+}
+
+.slide.fourth{
+  position: absolute;
+  right: 10%;
+  top: 45px;
+  z-index: -2;
+}
+
+.slide.third .slider , .slide.fourth .slider{
+  height: 250px;
+}
+
+.slide.third .slider__video , .slide.fourth .slider__video{
+  width: 100%;
+}
+
+.slide.third .slider__description , .slide.fourth .slider__description{
+  display: none;
+  width: 0;
+}
+
+.slide.third .video_controller ,.slide.slide.third .live_status{
+  display: none;
+}

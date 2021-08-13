@@ -2,26 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 10px;
 } */
 
 /* Track */
-/* ::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: transparent;
-} */
+}
 
 /* Handle */
-/* ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: transparent;
   border-radius: 999px;
   border: 1px solid transparent;
-} */
+}
 
 /* Handle on hover */
-/* ::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   border-color: #53535f;
-} */
+}
+
+::selection{
+  background: #9147ff;
+  color: white;
+}
 
 .noHoverItem{
   padding: 0 !important;

@@ -29829,10 +29829,9 @@ video {
 
 ::-webkit-scrollbar {
   width: 10px;
-}
+} */
 
 /* Track */
-
 ::-webkit-scrollbar-track {
   background: transparent;
 }
@@ -29849,6 +29848,11 @@ video {
 
 ::-webkit-scrollbar-thumb:hover {
   border-color: #53535f;
+}
+
+::selection{
+  background: #9147ff;
+  color: white;
 }
 
 .noHoverItem{

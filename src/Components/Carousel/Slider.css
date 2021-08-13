@@ -1,0 +1,85 @@
+.slider{
+  display: flex;
+  align-items: center;
+  width: 730px;
+  height: 320px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5), 0 0px 4px rgba(0, 0, 0, 0.4);
+}
+
+.slider__video .video_controller div *{
+  margin: 0 2px;
+}
+
+.slider__video{
+  width: 70%;
+  height: 100%;
+  position: relative;
+}
+
+.slider__video video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider__description{
+  width: 30%;
+  height: 100%;
+  background: #18181b;
+}
+
+.video_controller{
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  display: none;
+}
+
+.live_status{
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px;
+  display: none;
+}
+
+.slider__video:hover .video_controller{
+  background: linear-gradient(0deg,rgba(0,0,0,.8) 0,rgba(0,0,0,.35) 60%,transparent);
+  display: flex;
+}
+
+.slider__video:hover .live_status{
+  background: linear-gradient(180deg,rgba(0,0,0,.8) 0,rgba(0,0,0,.35) 60%,transparent);
+  display: flex;
+}
+
+.controllerBtn{
+  padding: 3px;
+  color: white;
+  font-size: 20px;
+  border-radius: 3px;
+}
+
+.controllerBtn:hover{
+  background: rgba(255,255,255,0.3);
+}
+
+.description__about{
+  color: #a970ff;
+  font-size: 14px;
+}
+
+.description__about:hover{
+  text-decoration: underline;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {Tooltip } from '@chakra-ui/react'
 import {BsArrowBarLeft , BsArrowBarRight} from 'react-icons/bs'
 import SidebarStream from './SidebarStream'
 import {connect} from 'react-redux'
@@ -9,7 +10,7 @@ let defaultStreamer = [
   {
     id: 1,
     name: "SabaViva",
-    profile: "https://static-cdn.jtvnw.net/jtv_user_pictures/3e77df75-f0ee-4942-a0dd-c5b64280f40d-profile_image-70x70.png",
+    profile: "https://static-cdn.jtvnw.net/jtv_user_pictures/185da68d-4005-4177-901a-4d6fb9d12932-profile_image-70x70.png",
     category: "Just Chatting",
     status :{
       view: 77
@@ -176,9 +177,11 @@ function Index(props) {
     <div className="sidebar" style={{width:`${responsive}%`,alignItems:"center",overflowX: responsive === 16 ? null : "hidden"}}>
       <div className="sidebar__header">
         {responsive === 16 ? <span className="text-sm font-medium">FOLLOWED CHANNELS</span> : null}
-        <button onClick={()=>responsive === 16 ? sideBarToggle("COLLAPSE") : sideBarToggle("EXPAND")} style={{margin: responsive === 16 ? null : "10px 0 10px 5px"}} >
-          {responsive === 16 ? <BsArrowBarLeft size={25} className="toggleSidebar" /> : <BsArrowBarRight size={25} className="toggleSidebar" />}
-        </button>
+        <Tooltip hasArrow placement="right" bg="white" color="black" label={responsive === 16 ? "Collapse" : "Expand"}>
+          <button onClick={()=>responsive === 16 ? sideBarToggle("COLLAPSE") : sideBarToggle("EXPAND")} style={{margin: responsive === 16 ? null : "0 0 0 5px"}} >
+            {responsive === 16 ? <BsArrowBarLeft size={25} className="toggleSidebar" /> : <BsArrowBarRight size={25} className="toggleSidebar" />}
+          </button>
+        </Tooltip>
       </div>
       {streamers.map(stream=> <SidebarStream key={stream.id} {...stream} /> )}
       {responsive === 16

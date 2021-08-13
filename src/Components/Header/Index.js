@@ -7,6 +7,7 @@ import {
   MenuItem,
   IconButton,
   Button,
+  Tooltip
 } from '@chakra-ui/react';
 import { Switch } from '@headlessui/react';
 import { BiDotsVerticalRounded, BiDiamond, BiCheck ,BiUserPlus , BiLogOut , BiMoon , BiWallet , BiChevronRight} from 'react-icons/bi';
@@ -48,11 +49,13 @@ function Index() {
           <a href="#" className="menu__link">
             Music
           </a>
-          <Menu>
-            <MenuButton className="moreBtn">
-              <BiDotsVerticalRounded />
-            </MenuButton>
-            <MenuList style={{ height: '630px' }}>
+          <Menu >
+            <Tooltip hasArrow placement="bottom" borderRadius="md" bg="white" color="black" label="More" openDelay={200}>
+              <MenuButton className="moreBtn">
+                <BiDotsVerticalRounded />
+              </MenuButton>
+            </Tooltip>
+            <MenuList style={{ height: '630px'}} zIndex="9999">
               <span style={{ margin: '0 3px', color: '#adadb8' }}>GENERAL</span>
               <MenuItem>About</MenuItem>
               <MenuItem>Advertisers</MenuItem>
